@@ -1,0 +1,33 @@
+﻿<Window x:Class="WpfCamera.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:WpfCamera.Controls"
+        Title="Kamerakép" Height="600" Width="800"
+        ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <Viewbox Grid.Column="0" Stretch="Uniform">
+            <Grid>
+                <Image Name="CameraImage" Width="640" Height="480" MouseDown="CameraImage_MouseDown" />
+                <Canvas Name="DrawingCanvas" Background="Transparent" MouseMove="CameraImage_MouseMove"
+                        MouseLeave="CameraImage_MouseLeave" MouseDown="CameraImage_MouseDown" />
+            </Grid>
+        </Viewbox>
+        
+        <StackPanel Grid.Column="1" VerticalAlignment="Top" Margin="10">
+            <controls:EdgeDetectionControl x:Name="EdgeDetectionCustomControl" Margin="10"/>
+
+            <ComboBox Name="FilterComboBox" Margin="5" SelectionChanged="FilterComboBox_SelectionChanged"
+                      DisplayMemberPath="Value" SelectedValuePath="Key" />
+            
+            <controls:GaussianFilterControl x:Name="GaussianFilterCustomControl" Visibility="Collapsed" />
+            <controls:MedianFilterControl x:Name="MedianFilterCustomControl" Visibility="Collapsed" />
+            <controls:BilateralFilterControl x:Name="BilateralFilterCustomControl" Visibility="Collapsed" />
+            <controls:PixelInfoControl x:Name="PixelInfo" />
+        </StackPanel>
+    </Grid>
+</Window>

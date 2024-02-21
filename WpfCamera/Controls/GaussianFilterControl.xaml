@@ -1,0 +1,10 @@
+﻿<UserControl x:Class="WpfCamera.Controls.GaussianFilterControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:WpfCamera.Controls">
+    <StackPanel Margin="10">
+        <TextBlock Text="Gauss Kernel Méret:"/>
+        <Slider x:Name="KernelSizeSlider" Minimum="1" Maximum="15" Value="{Binding KernelSize, Mode=TwoWay}" TickFrequency="2" IsSnapToTickEnabled="True"/>
+        <TextBlock Text="{Binding ElementName=KernelSizeSlider, Path=Value, StringFormat='Érték: {0:N0}'}"/>
+    </StackPanel>
+</UserControl>

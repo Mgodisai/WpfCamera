@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <UseWPF>true</UseWPF>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Emgu.TF" Version="2.15.0.1583" />
+      <PackageReference Include="Emgu.TF.Models" Version="2.15.0.1583" />
+      <PackageReference Include="Microsoft.ML" Version="3.0.1" />
+      <PackageReference Include="Microsoft.ML.ImageAnalytics" Version="3.0.1" />
+      <PackageReference Include="TensorFlow.NET" Version="0.150.0" />
+    </ItemGroup>
+
+</Project>
