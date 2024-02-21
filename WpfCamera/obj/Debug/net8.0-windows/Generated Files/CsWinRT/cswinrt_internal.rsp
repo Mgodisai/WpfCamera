@@ -1,7 +1,0 @@
--target net6.0
--input 7.0
--input 
--output "C:\Users\TVarga\RiderProjects\WpfCamera\WpfCamera\obj\Debug\net8.0-windows\Generated Files\CsWinRT"
-
--exclude Windows
--exclude Microsoft
